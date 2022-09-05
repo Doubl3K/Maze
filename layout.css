@@ -1,0 +1,11 @@
+body{
+    background: black;
+    color: white;
+}
+
+#mazewrapper{
+    background: red;
+    width: 500px;
+    height: 500px;
+    
+}
