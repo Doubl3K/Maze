@@ -11,14 +11,38 @@ function creator(){
         
         while (columnIndex<mazeWidth) {
             let cell = document.createElement("td");
-            cell.textContent = "test";
+            cell.textContent = "-";
+            if (columnIndex<1 && rowIndex<1) {
+                cell.id = 0
+            }    
+            decideBorders(cell);
+            cell.style.width = "30px";
+            cell.style.height= "30px";
             document.getElementById("row " + rowIndex).appendChild(cell)
             columnIndex++;
+            let cellidnum = cell.id + 1;
+            console.log(cellidnum);
+            
         }
         columnIndex = 0;
         rowIndex++;
     }
-}
+    
+    function decideBorders(cell){
+        if (cell.id == 0) {
+            cell.style.borderTop = "solid black 2px";
+            cell.style.borderBottom = "solid black 2px";
+            cell.className = "0";
+        }
+        else{
+            cell.style.borderTop = "solid green 2px";
+                cell.style.borderBottom = "solid green 2px";
+            }
+        }
+    }
+
+
+
 
 
 let rowIndex = 0;
